@@ -33,10 +33,10 @@ public class UTSPBO extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         txUsername = new javax.swing.JTextField();
-        btnLogin = new javax.swing.JButton();
         txPassword = new javax.swing.JPasswordField();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        kButton1 = new com.k33ptoo.components.KButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -60,17 +60,6 @@ public class UTSPBO extends javax.swing.JFrame {
             }
         });
 
-        btnLogin.setBackground(new java.awt.Color(0, 51, 255));
-        btnLogin.setFont(new java.awt.Font("Mazzard H", 1, 18)); // NOI18N
-        btnLogin.setForeground(new java.awt.Color(255, 255, 255));
-        btnLogin.setText("Login");
-        btnLogin.setBorder(null);
-        btnLogin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLoginActionPerformed(evt);
-            }
-        });
-
         txPassword.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
         txPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -82,7 +71,24 @@ public class UTSPBO extends javax.swing.JFrame {
         jLabel2.setText("Username");
 
         jLabel1.setFont(new java.awt.Font("Mazzard H", 1, 18)); // NOI18N
-        jLabel1.setText("LOGIN");
+        jLabel1.setText("LOGIN PAGE");
+
+        kButton1.setForeground(new java.awt.Color(0, 0, 0));
+        kButton1.setText("Login");
+        kButton1.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
+        kButton1.setkBackGroundColor(new java.awt.Color(0, 0, 0));
+        kButton1.setkEndColor(new java.awt.Color(0, 0, 255));
+        kButton1.setkFillButton(false);
+        kButton1.setkForeGround(new java.awt.Color(0, 0, 0));
+        kButton1.setkHoverEndColor(new java.awt.Color(255, 0, 204));
+        kButton1.setkHoverForeGround(new java.awt.Color(0, 0, 0));
+        kButton1.setkHoverStartColor(new java.awt.Color(0, 0, 255));
+        kButton1.setkStartColor(new java.awt.Color(255, 0, 204));
+        kButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -94,13 +100,13 @@ public class UTSPBO extends javax.swing.JFrame {
                     .addComponent(jLabel3)
                     .addComponent(jLabel2)
                     .addComponent(txUsername)
-                    .addComponent(btnLogin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 285, Short.MAX_VALUE)
+                    .addComponent(kButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(17, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addGap(135, 135, 135))
+                .addGap(101, 101, 101))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -115,9 +121,9 @@ public class UTSPBO extends javax.swing.JFrame {
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36)
-                .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34))
+                .addGap(34, 34, 34)
+                .addComponent(kButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(36, 36, 36))
         );
 
         javax.swing.GroupLayout kGradientPanel1Layout = new javax.swing.GroupLayout(kGradientPanel1);
@@ -164,17 +170,6 @@ public class UTSPBO extends javax.swing.JFrame {
     private void txUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txUsernameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txUsernameActionPerformed
-
-    private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
-        // TODO add your handling code here:
-            if (CekLogin(true)) {
-                MainActivity menu = new MainActivity();
-                menu.show();
-                dispose();
-            } else {
-                JOptionPane.showMessageDialog(null, "Akun Tidak Ditemukan");
-            }
-    }//GEN-LAST:event_btnLoginActionPerformed
     private boolean CekLogin(boolean login) {
         String pass = new String(txPassword.getPassword());
         if (txUsername.getText().equals("root") && pass.equals("12345")) {
@@ -190,6 +185,17 @@ public class UTSPBO extends javax.swing.JFrame {
     private void LatansaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LatansaMouseClicked
 
     }//GEN-LAST:event_LatansaMouseClicked
+
+    private void kButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton1ActionPerformed
+        // TODO add your handling code here:
+        if (CekLogin(true)) {
+                MainActivity menu = new MainActivity();
+                menu.show();
+                dispose();
+            } else {
+                JOptionPane.showMessageDialog(null, "Akun Tidak Ditemukan");
+            }
+    }//GEN-LAST:event_kButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -228,11 +234,11 @@ public class UTSPBO extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Latansa;
-    private javax.swing.JButton btnLogin;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
+    private com.k33ptoo.components.KButton kButton1;
     private keeptoo.KGradientPanel kGradientPanel1;
     private javax.swing.JPasswordField txPassword;
     private javax.swing.JTextField txUsername;
